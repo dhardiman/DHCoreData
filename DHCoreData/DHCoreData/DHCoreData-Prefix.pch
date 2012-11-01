@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'DHCoreData' target in the 'DHCoreData' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
+
+#define TEST_CASE_WITH_SUBCLASS(name, subclass) \
+@interface name : subclass \
+@end \
+@implementation name \
+
+#define TEST_CASE(name) TEST_CASE_WITH_SUBCLASS(name, SenTestCase)
+
+#define END_TEST_CASE \
+@end
+
