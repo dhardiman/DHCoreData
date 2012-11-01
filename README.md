@@ -10,3 +10,9 @@ changes up to the parent context to perform an asynchronous save.
 For asynchronous data processing, get a managed object context from the `context`, which will return a private queue type context
 wtih the `mainContext` as its parent.  Calling `dhSave:` should then notify the main context of updates before performing the save
 asynchronously.
+
+
+Todo:
+Get tests running properly.
+Add data model for testing
+Add default names for model and data store filename
