@@ -19,6 +19,13 @@
     NSManagedObjectContext *_mainContext;
 }
 
+- (id)init {
+    if ((self = [super init])) {
+        _directoryPath = NSCachesDirectory;
+    }
+    return self;
+}
+
 + (instancetype)sharedStack {
     static DHCoreDataStack *sharedStack = nil;
     static dispatch_once_t onceToken;
@@ -30,7 +37,7 @@
 
 - (NSManagedObjectModel *)managedObjectModel {
     if (!_managedObjectModel) {
-        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"momd"];
+        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:self.modelName withExtension:@"momd"];
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     }
     return _managedObjectModel;
@@ -39,8 +46,9 @@
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (!_persistentStoreCoordinator) {
         NSURL *cachesURL = [[[NSFileManager defaultManager]
-                             URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
-        NSURL *storeURL = [cachesURL URLByAppendingPathComponent:@""];
+                             URLsForDirectory:self.directoryPath inDomains:NSUserDomainMask] lastObject];
+        NSString *storeName = self.storeName.length ? self.storeName : self.modelName;
+        NSURL *storeURL = [cachesURL URLByAppendingPathComponent:storeName];
         NSDictionary *options = @{
             NSMigratePersistentStoresAutomaticallyOption : @YES,
             NSInferMappingModelAutomaticallyOption : @YES

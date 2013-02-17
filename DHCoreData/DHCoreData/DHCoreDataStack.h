@@ -17,6 +17,22 @@
 + (instancetype)sharedStack;
 
 /**
+ Name of the model we should be looking for
+ */
+@property (nonatomic, copy) NSString *modelName;
+/**
+ Name we should use for the store. Will to default
+ to model name if not set
+ */
+@property (nonatomic, copy) NSString *storeName;
+/**
+ Where should we store the database? Defaults to NSCachesDirectory,
+ assuming this is just a cache of feeds. If changing to NSDocumentsDirectory
+ ensure this database is only storing user created data
+ */
+@property (nonatomic, assign) NSUInteger directoryPath;
+
+/**
  The main thread context for the application
  */
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
