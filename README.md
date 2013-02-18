@@ -15,4 +15,3 @@ asynchronously.
 Todo:
 Get tests running properly.
 Add data model for testing
-Add default names for model and data store filename
