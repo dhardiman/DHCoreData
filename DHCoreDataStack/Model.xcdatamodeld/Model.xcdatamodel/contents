@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Animal" representedClassName="DHAnimal" syncable="YES">
+        <attribute name="animalName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="animalType" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="DHPerson" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Animal" positionX="108" positionY="-18" width="128" height="105"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>

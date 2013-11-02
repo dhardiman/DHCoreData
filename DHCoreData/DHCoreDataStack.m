@@ -1,27 +1,25 @@
 //
 //  DHCoreDataStack.m
+//  DHCoreDataStack
 //
-//  Created by David Hardiman on 23/10/2012.
+//  Created by David Hardiman on 09/07/2013.
+//  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
 
 #import "DHCoreDataStack.h"
+#import "NSObject+Notifications.h"
 
 @interface DHCoreDataStack ()
-/**
- The parent managed object context, used to save changes concurrently
- */
-@property (nonatomic, strong) NSManagedObjectContext *parentContext;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong, readwrite) NSManagedObjectContext *mainContext;
 @end
 
-@implementation DHCoreDataStack {
-    NSManagedObjectContext *_mainContext;
-}
+@implementation DHCoreDataStack
 
 - (id)init {
     if ((self = [super init])) {
-        _directoryPath = NSCachesDirectory;
+        _directoryPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject] path] copy];
     }
     return self;
 }
@@ -45,10 +43,9 @@
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (!_persistentStoreCoordinator) {
-        NSURL *cachesURL = [[[NSFileManager defaultManager]
-                             URLsForDirectory:self.directoryPath inDomains:NSUserDomainMask] lastObject];
         NSString *storeName = self.storeName.length ? self.storeName : self.modelName;
-        NSURL *storeURL = [cachesURL URLByAppendingPathComponent:storeName];
+        NSString *storePath = [self.directoryPath stringByAppendingPathComponent:storeName];
+        NSURL *storeURL = [NSURL fileURLWithPath:storePath];
         NSDictionary *options = @{
             NSMigratePersistentStoresAutomaticallyOption : @YES,
             NSInferMappingModelAutomaticallyOption : @YES
@@ -67,35 +64,24 @@
 }
 
 - (NSManagedObjectContext *)mainContext {
+    NSAssert([NSThread isMainThread], @"mainContext should only be called from the main thread");
     if (!_mainContext) {
-        self.parentContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        [self.parentContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
         _mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_mainContext setParentContext:self.parentContext];
+        [_mainContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
     }
     return _mainContext;
 }
 
 - (NSManagedObjectContext *)context {
     NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    [moc setParentContext:self.mainContext];
-    return moc;
-}
-
-@end
-
-@implementation NSManagedObjectContext (Save)
-
-- (BOOL)dhSave:(NSError **)error {
-    if (![self save:error]) {
-        return NO;
-    }
-    
-    [[self parentContext] performBlockAndWait:^{
-        [[self parentContext] dhSave:error];
+    [moc setPersistentStoreCoordinator:self.persistentStoreCoordinator];
+    NSManagedObjectContext *mainContext = self.mainContext;
+    [moc.dh_notificationStore addObserverForName:NSManagedObjectContextDidSaveNotification object:moc usingBlock:^(NSNotification *note) {
+        [mainContext performBlock:^{
+            [mainContext mergeChangesFromContextDidSaveNotification:note];
+        }];
     }];
-    
-    return (&error == nil);
+    return moc;
 }
 
 @end

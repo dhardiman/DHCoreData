@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>52368B10-81A5-4784-AC66-04C2D6ECC5D8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DHCoreDataStack</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>14931A8E-5D7E-41F2-A8F3-60A489745D1A</key>
+		<string>ssh://github.com/mobileiq/MIQCoreData.git</string>
+		<key>B77855AC-4049-482D-92BB-6E90C81A5948</key>
+		<string>ssh://github.com/mobileiq/MIQFoundation.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DHCoreDataStack.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>14931A8E-5D7E-41F2-A8F3-60A489745D1A</key>
+		<string>../..</string>
+		<key>2DB8DC68-9ADC-4773-8419-CDD5505650EF</key>
+		<string>../../DHFoundation</string>
+		<key>B77855AC-4049-482D-92BB-6E90C81A5948</key>
+		<string>../../MIQFoundation</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/mobileiq/MIQCoreData.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>14931A8E-5D7E-41F2-A8F3-60A489745D1A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2DB8DC68-9ADC-4773-8419-CDD5505650EF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DHFoundation</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>14931A8E-5D7E-41F2-A8F3-60A489745D1A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MIQCoreData</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B77855AC-4049-482D-92BB-6E90C81A5948</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MIQFoundation</string>
+		</dict>
+	</array>
+</dict>
+</plist>
