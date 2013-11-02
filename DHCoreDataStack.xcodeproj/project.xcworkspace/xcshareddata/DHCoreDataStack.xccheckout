@@ -5,58 +5,48 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>52368B10-81A5-4784-AC66-04C2D6ECC5D8</string>
+	<string>7480615B-379D-4A49-B1E5-D21F380849A8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DHCoreDataStack</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>14931A8E-5D7E-41F2-A8F3-60A489745D1A</key>
-		<string>ssh://github.com/mobileiq/MIQCoreData.git</string>
-		<key>B77855AC-4049-482D-92BB-6E90C81A5948</key>
-		<string>ssh://github.com/mobileiq/MIQFoundation.git</string>
+		<key>947C7ECB-0E0B-4CDA-BAD8-9AB7D7CBAC07</key>
+		<string>https://github.com/dhardiman/DHCoreData.git</string>
+		<key>AFBE1F2F-431A-45C5-BF30-D68152244E46</key>
+		<string>https://github.com/dhardiman/DHFoundation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DHCoreDataStack.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>14931A8E-5D7E-41F2-A8F3-60A489745D1A</key>
+		<key>947C7ECB-0E0B-4CDA-BAD8-9AB7D7CBAC07</key>
 		<string>../..</string>
-		<key>2DB8DC68-9ADC-4773-8419-CDD5505650EF</key>
+		<key>AFBE1F2F-431A-45C5-BF30-D68152244E46</key>
 		<string>../../DHFoundation</string>
-		<key>B77855AC-4049-482D-92BB-6E90C81A5948</key>
-		<string>../../MIQFoundation</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/mobileiq/MIQCoreData.git</string>
+	<string>https://github.com/dhardiman/DHCoreData.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>14931A8E-5D7E-41F2-A8F3-60A489745D1A</string>
+	<string>947C7ECB-0E0B-4CDA-BAD8-9AB7D7CBAC07</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2DB8DC68-9ADC-4773-8419-CDD5505650EF</string>
+			<string>947C7ECB-0E0B-4CDA-BAD8-9AB7D7CBAC07</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DHCoreData</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AFBE1F2F-431A-45C5-BF30-D68152244E46</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DHFoundation</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>14931A8E-5D7E-41F2-A8F3-60A489745D1A</string>
-			<key>IDESourceControlWCCName</key>
-			<string>MIQCoreData</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B77855AC-4049-482D-92BB-6E90C81A5948</string>
-			<key>IDESourceControlWCCName</key>
-			<string>MIQFoundation</string>
 		</dict>
 	</array>
 </dict>

@@ -1,0 +1,3 @@
+[submodule "DHFoundation"]
+	path = DHFoundation
+	url = https://github.com/dhardiman/DHFoundation.git
