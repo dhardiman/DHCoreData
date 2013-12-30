@@ -40,6 +40,7 @@
 		0731649D1796918800930FCE /* DHCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0731643017943D8900930FCE /* DHCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074536621824F971000D6B6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 074536611824F971000D6B6F /* Model.xcdatamodeld */; };
 		07632160179401EE00846D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A3178C161800ECCB21 /* Foundation.framework */; };
+		07996B2A1871FCDC00AC7123 /* libDHFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0786A1AC1824F18900DDFEB2 /* libDHFoundation.a */; };
 		07AA078117AA601E00A681C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AA078017AA601E00A681C9 /* SystemConfiguration.framework */; };
 		07AA078517AA60CD00A681C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AA078017AA601E00A681C9 /* SystemConfiguration.framework */; };
 		07DD35A2178C161800ECCB21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A1178C161800ECCB21 /* UIKit.framework */; };
@@ -102,6 +103,13 @@
 			remoteGlobalIDString = 076321C717940CD000846D0D;
 			remoteInfo = DHFoundation;
 		};
+		07996B2B1871FCE100AC7123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07316445179535CB00930FCE /* DHFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 076321C617940CD000846D0D;
+			remoteInfo = DHFoundation;
+		};
 		07DD35CF178C161800ECCB21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07DD3596178C161800ECCB21 /* Project object */;
@@ -157,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07996B2A1871FCDC00AC7123 /* libDHFoundation.a in Frameworks */,
 				07632160179401EE00846D0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +277,6 @@
 				07DD35BB178C161800ECCB21 /* Resources */,
 				07DD35A8178C161800ECCB21 /* Supporting Files */,
 			);
-			name = DHCoreDataStack;
 			path = DHCoreDataStack;
 			sourceTree = "<group>";
 		};
@@ -404,6 +412,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				07996B2C1871FCE100AC7123 /* PBXTargetDependency */,
 			);
 			name = DHCoreData;
 			productName = DHCoreData;
@@ -609,6 +618,11 @@
 			isa = PBXTargetDependency;
 			target = 0763215E179401EE00846D0D /* DHCoreData */;
 			targetProxy = 0731643B1794407400930FCE /* PBXContainerItemProxy */;
+		};
+		07996B2C1871FCE100AC7123 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DHFoundation;
+			targetProxy = 07996B2B1871FCE100AC7123 /* PBXContainerItemProxy */;
 		};
 		07DD35D0178C161800ECCB21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
