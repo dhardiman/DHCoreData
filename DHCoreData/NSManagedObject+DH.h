@@ -33,6 +33,24 @@
               matchingPredicate:(id)stringOrPredicate, ...;
 
 /**
+ Finds an object matching the specified predicate
+ @param context The context to search in
+ @param sortDescriptors Sort descriptor array
+ @param stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ */
++ (instancetype)objectInContext:(NSManagedObjectContext *)context
+          sortedWithDescriptors:(NSArray *)sortDescriptors
+              matchingPredicate:(id)stringOrPredicate, ...;
+
+/**
+ Returns a count of objects matching the specified predicate
+ @param context The context to search in
+ @param stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ */
++ (NSUInteger)countOfObjectsInContext:(NSManagedObjectContext *)context
+                    matchingPredicate:(id)stringOrPredicate, ...;
+
+/**
  *	Creates a fetch request for this class's entity
  *
  *	@param	context	Managed object context to use to configure the request

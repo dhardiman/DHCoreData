@@ -84,4 +84,19 @@ Test(ItIsPossibleToCreateAFetchRequest) {
     expect(array[1]).to.equal(person1);
 }
 
+Test(ItIsPossibleToGetASinglePersonBasedOnOrder) {
+    MAKE_SOME_PEOPLE;
+    DHPerson *testPerson = [DHPerson objectInContext:self.managedObjectContext sortedWithDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:NO]] matchingPredicate:nil];
+    expect(testPerson).to.equal(person2);
+}
+
+Test(ItIsPossibleToGetACountOfObjectsMatchingAParticularPredicate) {
+    MAKE_SOME_PEOPLE;
+    NSUInteger allPeople = [DHPerson countOfObjectsInContext:self.managedObjectContext matchingPredicate:nil];
+    expect(allPeople).to.equal(3);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName == %@", @"Person 1"];
+    NSUInteger thatGuy = [DHPerson countOfObjectsInContext:self.managedObjectContext matchingPredicate:predicate];
+    expect(thatGuy).to.equal(1);
+}
+
 END_TEST_CASE

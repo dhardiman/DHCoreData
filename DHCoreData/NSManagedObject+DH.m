@@ -46,15 +46,42 @@
     return results;
 }
 
++ (NSUInteger)countOfObjectsInContext:(NSManagedObjectContext *)context
+                    matchingPredicate:(id)stringOrPredicate, ... {
+    va_list args;
+    va_start(args, stringOrPredicate);
+    NSFetchRequest *request = [self fetchRequestForContext:context
+                                     sortedWithDescriptors:nil
+                                         matchingPredicate:stringOrPredicate
+                                                 arguments:args];
+    va_end(args);
+    return [context countForFetchRequest:request error:nil];
+}
+
 /*
  From http://www.cocoawithlove.com/2008/03/core-data-one-line-fetch.html
  */
 + (instancetype)objectInContext:(NSManagedObjectContext *)context matchingPredicate:(id)stringOrPredicate, ... {
     va_list args;
     va_start(args, stringOrPredicate);
-    NSArray *results = [self objectsInContext:context sortedWithDescriptors:nil matchingPredicate:stringOrPredicate arguments:args];
+    id result = [self objectInContext:context sortedWithDescriptors:nil matchingPredicate:stringOrPredicate arguments:args];
     va_end(args);
-    return [results lastObject];
+    return result;
+}
+
++ (instancetype)objectInContext:(NSManagedObjectContext *)context sortedWithDescriptors:(NSArray *)sortDescriptors matchingPredicate:(id)stringOrPredicate, ... {
+    va_list args;
+    va_start(args, stringOrPredicate);
+    id result = [self objectInContext:context sortedWithDescriptors:sortDescriptors matchingPredicate:stringOrPredicate arguments:args];
+    va_end(args);
+    return result;
+}
+
++ (instancetype)objectInContext:(NSManagedObjectContext *)context sortedWithDescriptors:(NSArray *)sortDescriptors matchingPredicate:(id)stringOrPredicate arguments:(va_list)args {
+    NSFetchRequest *request = [self fetchRequestForContext:context sortedWithDescriptors:sortDescriptors matchingPredicate:stringOrPredicate arguments:args];
+    request.fetchLimit = 1;
+    NSArray *results = [context executeFetchRequest:request error:nil];
+    return [results firstObject];
 }
 
 #pragma mark - Fetch request
