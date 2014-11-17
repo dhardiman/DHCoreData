@@ -8,6 +8,7 @@
 
 #import "DHCoreDataStack.h"
 #import "NSObject+Notifications.h"
+#import <objc/runtime.h>
 
 @interface DHCoreDataStack ()
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -25,12 +26,14 @@
 }
 
 + (instancetype)sharedStack {
-    static DHCoreDataStack *sharedStack = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedStack = [[self alloc] init];
-    });
-    return sharedStack;
+    @synchronized(self) {
+        id sharedStack = objc_getAssociatedObject(self, (__bridge const void *)(self));
+        if (!sharedStack) {
+            sharedStack = [[self alloc] init];
+            objc_setAssociatedObject(self, (__bridge const void *)(self), sharedStack, OBJC_ASSOCIATION_RETAIN);
+        }
+        return sharedStack;
+    }
 }
 
 - (NSManagedObjectModel *)managedObjectModel {

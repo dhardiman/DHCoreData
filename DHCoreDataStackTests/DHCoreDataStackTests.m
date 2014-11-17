@@ -14,6 +14,9 @@
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @end
 
+@interface DHTestCoreDataStack : DHCoreDataStack
+@end
+
 TEST_CASE_WITH_SUBCLASS(DHCoreDataStackTests, MIQCoreDataTestBase) {
     DHCoreDataStack *_stack;
 }
@@ -83,4 +86,16 @@ Test(ChangesMadeOnAChildContextGetReflectedInTheMainContext) {
     expect(mainPerson.firstName).will.equal(@"Test Name");
 }
 
+Test(StackSubclassesUseTheirOwnSharedInstance) {
+    expect(DHCoreDataStack.sharedStack).notTo.equal(DHTestCoreDataStack.sharedStack);
+}
+
+Test(SharedInstancesAlwaysReturnTheSameInstance) {
+    expect(DHCoreDataStack.sharedStack).to.beIdenticalTo(DHCoreDataStack.sharedStack);
+    expect(DHTestCoreDataStack.sharedStack).to.beIdenticalTo(DHTestCoreDataStack.sharedStack);
+}
+
 END_TEST_CASE
+
+@implementation DHTestCoreDataStack
+@end
