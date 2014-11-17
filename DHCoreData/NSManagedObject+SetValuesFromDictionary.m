@@ -7,6 +7,7 @@
 //
 
 #import "NSManagedObject+SetValuesFromDictionary.h"
+#import <DHFoundation/DHFoundation.h>
 #import "NSDate+Rails.h"
 #import "NSManagedObject+DH.h"
 #import "NSObject+Cast.h"
@@ -31,6 +32,10 @@ typedef id (^DHValueTransformBlock)(id value, NSDateFormatter *formatter);
             if ([value isKindOfClass:[NSNumber class]]) {
                 //We want a string, but we've got a number, so convert
                 return [value stringValue];
+            }
+            if ([value conformsToProtocol:@protocol(NSFastEnumeration)]) {
+                // We want a string, but we've got an array or dictionary. Convert to JSON.
+                return [value JSONString];
             }
             return value;
         }];
@@ -83,6 +88,10 @@ typedef id (^DHValueTransformBlock)(id value, NSDateFormatter *formatter);
  This method is heavily inspired by this blog post: http://www.cimgf.com/2011/06/02/saving-json-to-core-data/
  */
 - (void)updateValuesFromDictionary:(NSDictionary *)dictionary dateFormatter:(NSDateFormatter *)formatter {
+    [self updateValuesFromDictionary:dictionary dateFormatter:formatter nilUnsetValues:YES];
+}
+
+- (void)updateValuesFromDictionary:(NSDictionary *)dictionary dateFormatter:(NSDateFormatter *)formatter nilUnsetValues:(BOOL)nilUnset {
     if (!dictionary) {
         // No dictionary so return
         return;
@@ -99,7 +108,10 @@ typedef id (^DHValueTransformBlock)(id value, NSDateFormatter *formatter);
             return;
         }
         id value = [dictionary valueForKeyPath:dataKey];
-        if (!value || value == [NSNull null]) {
+        if (!nilUnset && value == nil) {
+            return;
+        }
+        if (nilUnset && (!value || value == [NSNull null])) {
             // We don't have a value for this field, so clear it
             // and move on
             [self setValue:nil forKey:attribute];
@@ -110,8 +122,33 @@ typedef id (^DHValueTransformBlock)(id value, NSDateFormatter *formatter);
         DHValueTransformer *transformer = [DHValueTransformer cast:[NSValueTransformer valueTransformerForName:transformerName]];
         transformer.formatter = formatter;
         value = [transformer transformedValue:value];
-        [self setValue:value forKey:attribute];
+        
+        /**
+         Is the new value the same as the old value?
+         Core data counts setting a value as a saveable
+         change, even if the data is identical. Doing
+         this check saves unnecessary object saves.
+         */
+        if (![[self valueForKey:attribute] isEqual:value]) {
+            [self setValue:value forKey:attribute];
+        }
     }];
+}
+
+- (NSArray *)updatedKeysForDictionary:(NSDictionary *)dictionary {
+    NSDictionary *keyMap = [[self class] keyPathsForProperties];
+    NSMutableArray *updatedKeys = [[NSMutableArray alloc] init];
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
+        NSUInteger keyPosition = [keyMap.allValues indexOfObject:key];
+        if (keyPosition != NSNotFound) {
+            NSString *propertyName = keyMap.allKeys[keyPosition];
+            if ([self respondsToSelector:NSSelectorFromString(propertyName)] && ![[self valueForKey:propertyName] isEqual:obj]) {
+                [updatedKeys addObject:key];
+            }
+        }
+        
+    }];
+    return updatedKeys;
 }
 
 + (instancetype)insertObjectWithDictionary:(NSDictionary *)dictionary

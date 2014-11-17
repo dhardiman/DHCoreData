@@ -21,6 +21,23 @@
                      dateFormatter:(NSDateFormatter *)formatter;
 
 /**
+ As above, but allows you to specify whether keys not found in the update dictionary
+ should be nil'd out on the managed object or not. If not, they will be left as before the update.
+ @param dictionary The non-nil dictionary with the values to update from
+ @param formatter Date formatter to use for date values or nil if dates are either integer values or not expected
+ @param nilUnsetValues Sets whether we should we nil the managed object's values if not found in the dictionary.
+ */
+- (void)updateValuesFromDictionary:(NSDictionary *)dictionary
+                     dateFormatter:(NSDateFormatter *)formatter
+                    nilUnsetValues:(BOOL)nilUnset;
+
+/**
+ Returns the keys of the dictionary passed in that contain
+ different data than that in the managed object.
+ */
+- (NSArray *)updatedKeysForDictionary:(NSDictionary *)dictionary;
+
+/**
  Inserts an object to the specified context and popuplates it with the provided dictionary. Does not attempt to unique
  the object, so ensure this is done prior to this call.
  @param dictionary The non-nil dictionary with the values to update from

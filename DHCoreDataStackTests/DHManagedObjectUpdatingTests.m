@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
 #import <MIQTestingFramework/MIQTestingFramework.h>
+#import <DHFoundation/DHFoundation.h>
 #import "DHPerson.h"
 #import "DHAnimal.h"
 
@@ -72,6 +73,51 @@ Test(ItIsPossibleToInsertAnObjectAndUpdateAllAtTheSameTime) {
     expect(animal).to.beKindOf([DHAnimal class]);
     expect(animal.animalType).to.equal(@"Cat");
     expect(animal.animalName).to.equal(@"Tibbles");
+}
+
+Test(ItIsPossibleToInsertAnObjectAndUpdateWithoutNilingUnsetValues) {
+    DHAnimal *animal = [DHAnimal insertObjectInContext:self.managedObjectContext];
+    animal.animalName = @"🐍";
+    animal.animalType = @"snake";
+    [animal updateValuesFromDictionary:@{ @"animal_name": @"🐴" } dateFormatter:nil];
+    expect(animal.animalType).to.beNil();
+    
+    animal.animalType = @"raptor";
+    [animal updateValuesFromDictionary:@{ @"animal_name": @"🐴" } dateFormatter:nil nilUnsetValues:NO];
+    expect(animal.animalType).notTo.beNil();
+}
+
+Test(ItIsPossibleToGetAListOfKeysThatWillBeUpdatedIfWeUpdateValuesFromDictionary) {
+    DHAnimal *animal = [DHAnimal insertObjectInContext:self.managedObjectContext];
+    animal.animalName = @"🐍";
+    animal.animalType = @"snake";
+    [animal updateValuesFromDictionary:@{ @"animal_name": @"🐴" } dateFormatter:nil];
+    expect(animal.animalType).to.beNil();
+    
+    NSDictionary *newData = @{ @"animal_name": @"🐒" };
+    NSArray *keys = [animal updatedKeysForDictionary:newData];
+    NSString *updatedKey = keys.firstObject;
+    expect([updatedKey isEqualToString:newData.allKeys.firstObject]).to.beTruthy();
+}
+
+Test(ItIsPossibleToUpdateAnObjectTransformingAnInputArrayIntoAString) {
+    DHAnimal *animal = [DHAnimal insertObjectInContext:self.managedObjectContext];
+    animal.animalType = @"🐊";
+    animal.animalName = @"Crocs";
+    NSArray *newName = @[ @"Croc", @"Joe" ];
+    NSString *jsonString = [newName JSONString];
+    [animal updateValuesFromDictionary:@{ @"animal_name": newName } dateFormatter:nil];
+    expect(animal.animalName).to.equal(jsonString);
+}
+
+Test(ItIsPossibleToUpdateAnObjectTransformingAnInputDictionaryIntoAString) {
+    DHAnimal *animal = [DHAnimal insertObjectInContext:self.managedObjectContext];
+    animal.animalType = @"🐓";
+    animal.animalName = @"Cock";
+    NSDictionary *newName = @{ @"name": @"cockerel" };
+    NSString *jsonString = [newName JSONString];
+    [animal updateValuesFromDictionary:@{ @"animal_name": newName } dateFormatter:nil];
+    expect(animal.animalName).to.equal(jsonString);
 }
 
 END_TEST_CASE
