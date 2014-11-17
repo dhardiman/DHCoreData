@@ -40,7 +40,6 @@
 		0731649D1796918800930FCE /* DHCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0731643017943D8900930FCE /* DHCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		074536621824F971000D6B6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 074536611824F971000D6B6F /* Model.xcdatamodeld */; };
 		07632160179401EE00846D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A3178C161800ECCB21 /* Foundation.framework */; };
-		07996B2A1871FCDC00AC7123 /* libDHFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0786A1AC1824F18900DDFEB2 /* libDHFoundation.a */; };
 		07AA078117AA601E00A681C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AA078017AA601E00A681C9 /* SystemConfiguration.framework */; };
 		07AA078517AA60CD00A681C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AA078017AA601E00A681C9 /* SystemConfiguration.framework */; };
 		07DD35A2178C161800ECCB21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A1178C161800ECCB21 /* UIKit.framework */; };
@@ -58,6 +57,7 @@
 		07F0B8F817C17C1F003D8581 /* DHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F0B8F617C17C1F003D8581 /* DHViewController.xib */; };
 		07F0B8FB17C17C37003D8581 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F0B8F917C17C37003D8581 /* InfoPlist.strings */; };
 		07F0B90017C17C42003D8581 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0B8FE17C17C42003D8581 /* main.m */; };
+		45DE09571A1A4F55008EC57A /* libDHFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0786A1AC1824F18900DDFEB2 /* libDHFoundation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,13 +101,6 @@
 			containerPortal = 07316445179535CB00930FCE /* DHFoundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 076321C717940CD000846D0D;
-			remoteInfo = DHFoundation;
-		};
-		07996B2B1871FCE100AC7123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07316445179535CB00930FCE /* DHFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 076321C617940CD000846D0D;
 			remoteInfo = DHFoundation;
 		};
 		07DD35CF178C161800ECCB21 /* PBXContainerItemProxy */ = {
@@ -165,7 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07996B2A1871FCDC00AC7123 /* libDHFoundation.a in Frameworks */,
 				07632160179401EE00846D0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DE09571A1A4F55008EC57A /* libDHFoundation.a in Frameworks */,
 				07AA078517AA60CD00A681C9 /* SystemConfiguration.framework in Frameworks */,
 				0731643617943E2700930FCE /* libDHCoreData.a in Frameworks */,
 				07DD35F5178C224200ECCB21 /* CoreData.framework in Frameworks */,
@@ -412,7 +405,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				07996B2C1871FCE100AC7123 /* PBXTargetDependency */,
 			);
 			name = DHCoreData;
 			productName = DHCoreData;
@@ -455,7 +447,7 @@
 			name = DHCoreDataStackTests;
 			productName = DHCoreDataStackTests;
 			productReference = 07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -619,11 +611,6 @@
 			target = 0763215E179401EE00846D0D /* DHCoreData */;
 			targetProxy = 0731643B1794407400930FCE /* PBXContainerItemProxy */;
 		};
-		07996B2C1871FCE100AC7123 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DHFoundation;
-			targetProxy = 07996B2B1871FCE100AC7123 /* PBXContainerItemProxy */;
-		};
 		07DD35D0178C161800ECCB21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 07DD359D178C161800ECCB21 /* DHCoreDataStack */;
@@ -682,6 +669,7 @@
 				HEADER_SEARCH_PATHS = "../**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers/;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -695,6 +683,7 @@
 				HEADER_SEARCH_PATHS = "../**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = Headers/;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

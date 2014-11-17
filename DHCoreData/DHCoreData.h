@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
 
-#import "DHFoundation.h"
 #import "DHCoreDataStack.h"
 #import "NSManagedObject+DH.h"
 #import "NSManagedObject+SetValuesFromDictionary.h"

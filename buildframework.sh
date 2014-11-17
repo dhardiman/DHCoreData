@@ -68,7 +68,7 @@ mkdir -p "${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/"
 # Smash the two static libraries into one fat binary and store it in the .framework
 lipo -create "${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}" "${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}" -output "${A_FOLDER}/${SF_TARGET_NAME}"
 
-find "${BUILT_PRODUCTS_DIR}/usr/local/include" -type f -iname "*.h" | while read -r FILE
+find "${BUILT_PRODUCTS_DIR}/Headers" -type f -iname "*.h" | while read -r FILE
 do
     mv "${FILE}" "${HEADERS}/$(basename ${FILE})"
 done
