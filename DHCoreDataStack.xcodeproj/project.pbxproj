@@ -58,6 +58,7 @@
 		07F0B8FB17C17C37003D8581 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F0B8F917C17C37003D8581 /* InfoPlist.strings */; };
 		07F0B90017C17C42003D8581 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0B8FE17C17C42003D8581 /* main.m */; };
 		45DE09571A1A4F55008EC57A /* libDHFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0786A1AC1824F18900DDFEB2 /* libDHFoundation.a */; };
+		45DE09931A1B5237008EC57A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35EB178C17DA00ECCB21 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DE09931A1B5237008EC57A /* CoreData.framework in Frameworks */,
 				07632160179401EE00846D0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,11 +22,11 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9B1CB1E79B9BADC737FD887D708ECC0E47B150CC</key>
-		<string>../../../../Dropbox/Code/Common%20iOS%20Code/MIQCoreData/MIQFoundation</string>
+		<string>../../../Dropbox/Code/Common%20iOS%20Code/MIQCoreData/MIQFoundation</string>
 		<key>DC02B897EB888C78AF297B6E60A138794ECB7650</key>
 		<string>../..</string>
 		<key>F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E</key>
-		<string>../..DHFoundation/</string>
+		<string>../..DHFoundation</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:dhardiman/DHCoreData.git</string>
@@ -50,7 +50,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E</string>
 			<key>IDESourceControlWCCName</key>
-			<string>DHFoundation</string>
+			<string>DHCoreDataDHFoundation</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

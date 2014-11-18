@@ -59,9 +59,11 @@ FRAMEWORK_FOLDER="${BUILD_ROOT}/${SF_WRAPPER_NAME}"
 rm -rf "${FRAMEWORK_FOLDER}"
 
 VERSIONS="${FRAMEWORK_FOLDER}/Versions"
+MODULES="${FRAMEWORK_FOLDER}/Modules"
 A_FOLDER="${VERSIONS}/A/"
 HEADERS="${A_FOLDER}/Headers"
 mkdir -p "${A_FOLDER}"
+mkdir -p "${MODULES}"
 mkdir -p "${HEADERS}"
 mkdir -p "${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/"
 
@@ -72,6 +74,8 @@ find "${BUILT_PRODUCTS_DIR}/Headers" -type f -iname "*.h" | while read -r FILE
 do
     mv "${FILE}" "${HEADERS}/$(basename ${FILE})"
 done
+
+cp "$PROJECT_DIRECTORY/Modules/module.modulemap" "$MODULES/module.modulemap"
 
 cd "${FRAMEWORK_FOLDER}"
 ln -s "Versions/A" "Versions/Current"
