@@ -77,6 +77,7 @@ typedef id (^DHValueTransformBlock)(id value, NSDateFormatter *formatter);
         case NSInteger64AttributeType:
         case NSBooleanAttributeType:
             return @"NumberTransformer";
+        case NSDoubleAttributeType:
         case NSFloatAttributeType:
             return @"FloatTransformer";
         default:
