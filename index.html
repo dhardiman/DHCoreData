@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="DHCoreData : Core data boilerplate code">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>DHCoreData</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dhardiman/DHCoreData">View on GitHub</a>
+
+          <h1 id="project_title">DHCoreData</h1>
+          <h2 id="project_tagline">Core data boilerplate code</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dhardiman/DHCoreData/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dhardiman/DHCoreData/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="dhcoredata" class="anchor" href="#dhcoredata" aria-hidden="true"><span class="octicon octicon-link"></span></a>DHCoreData</h1>
+
+<p>Common repository of useful Core Data code</p>
+
+<p>Requires <a href="https://github.com/dhardiman/DHFoundation">DHFoundation</a>.</p>
+
+<p>Documentation can be found here</p>
+
+<h2>
+<a id="classes" class="anchor" href="#classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes</h2>
+
+<h3>
+<a id="dhcoredatastack" class="anchor" href="#dhcoredatastack" aria-hidden="true"><span class="octicon octicon-link"></span></a>DHCoreDataStack</h3>
+
+<p>Convenient class for configuring Core Data. Using the <code>sharedStack</code> will give you a configured main thread managed object context as well as a method for getting private queue managed object contexts which are configured for merging their changes to the main context on save. The name of the model should be supplied, as well as optional configurations for the directory and the store name. If you have multiple models in your app, simply create and retain as many <code>DHCoreDataStack</code> objects as you have models.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">DHCoreData maintained by <a href="https://github.com/dhardiman">dhardiman</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
