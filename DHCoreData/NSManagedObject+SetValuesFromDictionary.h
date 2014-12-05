@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  NSManagedObject extension methods for easily updating an object from
+ *  a dictionary representation
+ */
 @interface NSManagedObject (SetValuesFromDictionary)
 
 /**
@@ -25,7 +29,7 @@
  should be nil'd out on the managed object or not. If not, they will be left as before the update.
  @param dictionary The non-nil dictionary with the values to update from
  @param formatter Date formatter to use for date values or nil if dates are either integer values or not expected
- @param nilUnsetValues Sets whether we should we nil the managed object's values if not found in the dictionary.
+ @param nilUnset Sets whether we should we nil the managed object's values if not found in the dictionary.
  */
 - (void)updateValuesFromDictionary:(NSDictionary *)dictionary
                      dateFormatter:(NSDateFormatter *)formatter
@@ -34,6 +38,7 @@
 /**
  Returns the keys of the dictionary passed in that contain
  different data than that in the managed object.
+ @param dictionary The dictionary to check
  */
 - (NSArray *)updatedKeysForDictionary:(NSDictionary *)dictionary;
 

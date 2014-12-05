@@ -19,6 +19,17 @@
 			name = framework;
 			productName = framework;
 		};
+		450A4B6E1A31A872001D9577 /* documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 450A4B741A31A872001D9577 /* Build configuration list for PBXAggregateTarget "documentation" */;
+			buildPhases = (
+				450A4B751A31A883001D9577 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = documentation;
+			productName = documentation;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -460,6 +471,11 @@
 				CLASSPREFIX = DH;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					450A4B6E1A31A872001D9577 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = 07DD3599178C161800ECCB21 /* Build configuration list for PBXProject "DHCoreDataStack" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -483,6 +499,7 @@
 				07DD35C9178C161800ECCB21 /* DHCoreDataStackTests */,
 				0763215E179401EE00846D0D /* DHCoreData */,
 				073164371794405D00930FCE /* framework */,
+				450A4B6E1A31A872001D9577 /* documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -558,6 +575,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		450A4B751A31A883001D9577 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"David Hardiman\";\ncompanyID=\"me.davidhardiman\";\ncompanyURL=\"http://davidhardiman.me\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"${PROJECT_DIR}/documentation\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"DHCoreData\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}/DHCoreData\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -855,6 +885,20 @@
 			};
 			name = Release;
 		};
+		450A4B6F1A31A872001D9577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		450A4B701A31A872001D9577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -902,6 +946,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		450A4B741A31A872001D9577 /* Build configuration list for PBXAggregateTarget "documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				450A4B6F1A31A872001D9577 /* Debug */,
+				450A4B701A31A872001D9577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

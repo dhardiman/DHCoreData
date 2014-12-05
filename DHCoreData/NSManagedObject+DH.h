@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
 
+/**
+ *  Convenience extension methods on `NSManagedObject` for easy fetching,
+ *  inserting and creation of fetch requests.
+ */
 @interface NSManagedObject (DH)
 
 /**
@@ -19,6 +23,7 @@
  @param context The context to search in
  @param sortDescriptors Sort descriptor array
  @param stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ @param ... A comma-separated list of arguments to substitute into `stringOrPredicate`
  */
 + (NSArray *)objectsInContext:(NSManagedObjectContext *)context
         sortedWithDescriptors:(NSArray *)sortDescriptors
@@ -28,6 +33,7 @@
  Finds an object matching the specified predicate
  @param context The context to search in
  @param stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ @param ... A comma-separated list of arguments to substitute into `stringOrPredicate`
  */
 + (instancetype)objectInContext:(NSManagedObjectContext *)context
               matchingPredicate:(id)stringOrPredicate, ...;
@@ -37,6 +43,7 @@
  @param context The context to search in
  @param sortDescriptors Sort descriptor array
  @param stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ @param ... A comma-separated list of arguments to substitute into `stringOrPredicate`
  */
 + (instancetype)objectInContext:(NSManagedObjectContext *)context
           sortedWithDescriptors:(NSArray *)sortDescriptors
@@ -46,6 +53,7 @@
  Returns a count of objects matching the specified predicate
  @param context The context to search in
  @param stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ @param ... A comma-separated list of arguments to substitute into `stringOrPredicate`
  */
 + (NSUInteger)countOfObjectsInContext:(NSManagedObjectContext *)context
                     matchingPredicate:(id)stringOrPredicate, ...;
@@ -65,6 +73,7 @@
  *	@param	context	Managed object context to use to configure the request
  *	@param	sortDescriptors	Sort descriptor array To sort the results on
  *	@param	stringOrPredicate Either an NSPredicate object or a string with variadic arguments to use to create a predicate
+ *  @param ... A comma-separated list of arguments to substitute into `stringOrPredicate`
  *
  *	@return	Configured NSFetchRequest for this class's entity, with the provided sort descriptors and predicate
  */
