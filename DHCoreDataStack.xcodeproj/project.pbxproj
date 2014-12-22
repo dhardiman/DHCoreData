@@ -56,7 +56,6 @@
 		07DD35A2178C161800ECCB21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A1178C161800ECCB21 /* UIKit.framework */; };
 		07DD35A4178C161800ECCB21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A3178C161800ECCB21 /* Foundation.framework */; };
 		07DD35A6178C161800ECCB21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A5178C161800ECCB21 /* CoreGraphics.framework */; };
-		07DD35CC178C161800ECCB21 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35CB178C161800ECCB21 /* SenTestingKit.framework */; };
 		07DD35CD178C161800ECCB21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A1178C161800ECCB21 /* UIKit.framework */; };
 		07DD35CE178C161800ECCB21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35A3178C161800ECCB21 /* Foundation.framework */; };
 		07DD35EC178C17DA00ECCB21 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DD35EB178C17DA00ECCB21 /* CoreData.framework */; };
@@ -147,8 +146,7 @@
 		07DD35A1178C161800ECCB21 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07DD35A3178C161800ECCB21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07DD35A5178C161800ECCB21 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHCoreDataStackTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07DD35CB178C161800ECCB21 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHCoreDataStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DD35EB178C17DA00ECCB21 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		07F0B8EA17C17BF8003D8581 /* DHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = DHAppDelegate.h; path = DHCoreDataStack/Classes/Application/DHAppDelegate.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07F0B8EB17C17BF8003D8581 /* DHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = DHAppDelegate.m; path = DHCoreDataStack/Classes/Application/DHAppDelegate.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -197,7 +195,6 @@
 				07AA078517AA60CD00A681C9 /* SystemConfiguration.framework in Frameworks */,
 				0731643617943E2700930FCE /* libDHCoreData.a in Frameworks */,
 				07DD35F5178C224200ECCB21 /* CoreData.framework in Frameworks */,
-				07DD35CC178C161800ECCB21 /* SenTestingKit.framework in Frameworks */,
 				07DD35CD178C161800ECCB21 /* UIKit.framework in Frameworks */,
 				07DD35CE178C161800ECCB21 /* Foundation.framework in Frameworks */,
 				07316456179539E300930FCE /* MIQTestingFramework.framework in Frameworks */,
@@ -234,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				0786A1A81824F18900DDFEB2 /* DHFoundationTestBase.app */,
-				0786A1AA1824F18900DDFEB2 /* DHFoundationTests.octest */,
+				0786A1AA1824F18900DDFEB2 /* DHFoundationTests.xctest */,
 				0786A1AC1824F18900DDFEB2 /* libDHFoundation.a */,
 			);
 			name = Products;
@@ -255,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				07DD359E178C161800ECCB21 /* DHCoreDataStack.app */,
-				07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.octest */,
+				07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.xctest */,
 				0763215F179401EE00846D0D /* libDHCoreData.a */,
 			);
 			name = Products;
@@ -270,7 +267,6 @@
 				07DD35A1178C161800ECCB21 /* UIKit.framework */,
 				07DD35A3178C161800ECCB21 /* Foundation.framework */,
 				07DD35A5178C161800ECCB21 /* CoreGraphics.framework */,
-				07DD35CB178C161800ECCB21 /* SenTestingKit.framework */,
 				07AA078017AA601E00A681C9 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
@@ -459,8 +455,8 @@
 			);
 			name = DHCoreDataStackTests;
 			productName = DHCoreDataStackTests;
-			productReference = 07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 07DD35CA178C161800ECCB21 /* DHCoreDataStackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -469,7 +465,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DH;
-				LastUpgradeCheck = 0500;
+				LastTestingUpgradeCheck = 0610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					450A4B6E1A31A872001D9577 = {
@@ -512,10 +509,10 @@
 			remoteRef = 0786A1A71824F18900DDFEB2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0786A1AA1824F18900DDFEB2 /* DHFoundationTests.octest */ = {
+		0786A1AA1824F18900DDFEB2 /* DHFoundationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = DHFoundationTests.octest;
+			path = DHFoundationTests.xctest;
 			remoteRef = 0786A1A91824F18900DDFEB2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -724,15 +721,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -759,15 +759,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -835,6 +838,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/DHFoundation/DHFoundationTests\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHCoreDataStack/DHCoreDataStack-Prefix.pch";
@@ -848,7 +852,7 @@
 				);
 				PRODUCT_NAME = DHCoreDataStackTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -869,6 +873,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/DHFoundation/DHFoundationTests\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHCoreDataStack/DHCoreDataStack-Prefix.pch";
@@ -881,7 +886,7 @@
 				);
 				PRODUCT_NAME = DHCoreDataStackTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -954,6 +959,7 @@
 				450A4B701A31A872001D9577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

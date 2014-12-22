@@ -10,7 +10,7 @@
 #import "DHAnimal.h"
 #import "NSManagedObject+DH.h"
 
-TEST_CASE_WITH_SUBCLASS(DHNSManagedObjectExtensionTests, MIQCoreDataTestBase)
+TEST_CASE_WITH_SUBCLASS(DHNSManagedObjectExtensionTests, MIQCoreDataTestCase)
 
 Test(ItIsPossibleToInsertANewEntity) {
     DHPerson *person = [DHPerson insertObjectInContext:self.managedObjectContext];

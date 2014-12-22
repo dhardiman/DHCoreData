@@ -10,7 +10,7 @@
 #import "DHPerson.h"
 #import "DHAnimal.h"
 
-TEST_CASE_WITH_SUBCLASS(DHManagedObjectUpdatingTests, MIQCoreDataTestBase)
+TEST_CASE_WITH_SUBCLASS(DHManagedObjectUpdatingTests, MIQCoreDataTestCase)
 
 Test(ItIsPossibleToUpdateObjectFromDictionary) {
     DHPerson *person = [DHPerson insertObjectInContext:self.managedObjectContext];

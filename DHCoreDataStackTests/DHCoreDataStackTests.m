@@ -17,7 +17,7 @@
 @interface DHTestCoreDataStack : DHCoreDataStack
 @end
 
-TEST_CASE_WITH_SUBCLASS(DHCoreDataStackTests, MIQCoreDataTestBase) {
+TEST_CASE_WITH_SUBCLASS(DHCoreDataStackTests, MIQCoreDataTestCase) {
     DHCoreDataStack *_stack;
 }
 

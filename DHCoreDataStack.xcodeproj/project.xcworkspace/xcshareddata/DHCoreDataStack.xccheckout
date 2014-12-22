@@ -56,6 +56,14 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DHCoreDataDHFoundation</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9B1CB1E79B9BADC737FD887D708ECC0E47B150CC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MIQFoundation</string>
