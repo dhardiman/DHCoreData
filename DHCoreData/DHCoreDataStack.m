@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "DHCoreDataStack.h"
-#import "NSObject+Notifications.h"
+@import DHFoundation;
 #import <objc/runtime.h>
 
 @interface DHCoreDataStack ()
@@ -20,7 +21,8 @@
 
 - (id)init {
     if ((self = [super init])) {
-        _directoryPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject] path] copy];
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
+        _directoryPath = [[url path] copy];
     }
     return self;
 }

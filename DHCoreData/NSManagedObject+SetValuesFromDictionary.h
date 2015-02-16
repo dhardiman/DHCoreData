@@ -6,7 +6,7 @@
 //  Copyright 2011 David Hardiman. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 /**
  *  NSManagedObject extension methods for easily updating an object from

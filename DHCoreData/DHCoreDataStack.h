@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
+
 /**
  Class for vending the core data stack for the application.
  Users should use the shared instance or data may not get

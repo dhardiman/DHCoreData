@@ -1,0 +1,6 @@
+framework module MIQTestingFramework {
+    umbrella header "MIQTestingFramework.h"
+
+    export *
+    module * { export * }
+}

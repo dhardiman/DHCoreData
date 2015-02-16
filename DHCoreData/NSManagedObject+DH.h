@@ -5,6 +5,7 @@
 //  Created by David Hardiman on 09/07/2013.
 //  Copyright (c) 2013 David Hardiman. All rights reserved.
 //
+#import <CoreData/CoreData.h>
 
 /**
  *  Convenience extension methods on `NSManagedObject` for easy fetching,

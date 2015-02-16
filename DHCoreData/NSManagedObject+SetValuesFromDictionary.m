@@ -7,10 +7,8 @@
 //
 
 #import "NSManagedObject+SetValuesFromDictionary.h"
-#import <DHFoundation/DHFoundation.h>
-#import "NSDate+Rails.h"
+@import DHFoundation;
 #import "NSManagedObject+DH.h"
-#import "NSObject+Cast.h"
 
 typedef id (^DHValueTransformBlock)(id value, NSDateFormatter *formatter);
 @interface DHValueTransformer : NSValueTransformer

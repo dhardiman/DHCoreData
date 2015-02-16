@@ -1,6 +1,0 @@
-framework module DHCoreData {
-    umbrella header "DHCoreData.h"
-
-    export *
-    module * { export * }
-}

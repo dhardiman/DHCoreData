@@ -1,0 +1,6 @@
+framework module DHFoundation {
+  umbrella header "DHFoundation.h"
+
+  export *
+  module * { export * }
+}
