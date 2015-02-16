@@ -18,6 +18,17 @@
 			name = documentation;
 			productName = documentation;
 		};
+		454285921A91EED800084DBA /* universalframework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 454285931A91EED800084DBA /* Build configuration list for PBXAggregateTarget "universalframework" */;
+			buildPhases = (
+				454285961A91EEDD00084DBA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = universalframework;
+			productName = universalframework;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -435,6 +446,9 @@
 					450A4B6E1A31A872001D9577 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					454285921A91EED800084DBA = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					454C84361A48591300DC63B5 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -457,6 +471,7 @@
 				07DD35C9178C161800ECCB21 /* DHCoreDataStackTests */,
 				450A4B6E1A31A872001D9577 /* documentation */,
 				454C84361A48591300DC63B5 /* DHCoreData */,
+				454285921A91EED800084DBA /* universalframework */,
 			);
 		};
 /* End PBXProject section */
@@ -515,6 +530,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"David Hardiman\";\ncompanyID=\"me.davidhardiman\";\ncompanyURL=\"http://davidhardiman.me\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"${PROJECT_DIR}/documentation\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"DHCoreData\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}/DHCoreData\"";
+		};
+		454285961A91EEDD00084DBA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\nFRAMEWORK_NAME=\"DHCoreData\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${FRAMEWORK_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${FRAMEWORK_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_NAME}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -796,6 +824,20 @@
 			};
 			name = Release;
 		};
+		454285941A91EED800084DBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		454285951A91EED800084DBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		454C84511A48591300DC63B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -899,6 +941,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		454285931A91EED800084DBA /* Build configuration list for PBXAggregateTarget "universalframework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454285941A91EED800084DBA /* Debug */,
+				454285951A91EED800084DBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		454C84501A48591300DC63B5 /* Build configuration list for PBXNativeTarget "DHCoreData" */ = {
 			isa = XCConfigurationList;

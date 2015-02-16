@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "073164371794405D00930FCE"
-               BuildableName = "framework"
-               BlueprintName = "framework"
+               BlueprintIdentifier = "454C84361A48591300DC63B5"
+               BuildableName = "DHCoreData.framework"
+               BlueprintName = "DHCoreData"
                ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,16 +35,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "073164371794405D00930FCE"
-            BuildableName = "framework"
-            BlueprintName = "framework"
+            BlueprintIdentifier = "454C84361A48591300DC63B5"
+            BuildableName = "DHCoreData.framework"
+            BlueprintName = "DHCoreData"
             ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,6 +57,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "454C84361A48591300DC63B5"
+            BuildableName = "DHCoreData.framework"
+            BlueprintName = "DHCoreData"
+            ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
