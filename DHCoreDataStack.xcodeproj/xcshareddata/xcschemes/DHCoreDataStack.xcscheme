@@ -20,20 +20,6 @@
                ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "454C84401A48591300DC63B5"
-               BuildableName = "DHCoreDataFrameworkTests.xctest"
-               BlueprintName = "DHCoreDataFrameworkTests"
-               ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,16 +35,6 @@
                BlueprintIdentifier = "07DD35C9178C161800ECCB21"
                BuildableName = "DHCoreDataStackTests.xctest"
                BlueprintName = "DHCoreDataStackTests"
-               ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "454C84401A48591300DC63B5"
-               BuildableName = "DHCoreDataFrameworkTests.xctest"
-               BlueprintName = "DHCoreDataFrameworkTests"
                ReferencedContainer = "container:DHCoreDataStack.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -82,7 +58,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07DD359D178C161800ECCB21"
@@ -100,7 +77,8 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07DD359D178C161800ECCB21"
