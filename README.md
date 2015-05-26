@@ -1,6 +1,8 @@
 DHCoreData
 ================
 
+[![Circle CI](https://circleci.com/gh/dhardiman/DHCoreData.svg?style=svg&circle-token=749cfe467657ec38861f166f80a6c7081a02a2c1)](https://circleci.com/gh/dhardiman/DHCoreData)
+
 Common repository of useful Core Data code
 
 Includes [DHFoundation](https://github.com/dhardiman/DHFoundation) when built as a framework.
