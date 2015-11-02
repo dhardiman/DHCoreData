@@ -1,0 +1,11 @@
+framework module DHCoreData {
+  umbrella header "DHCoreData.h"
+
+  export *
+  module * { export * }
+
+  module SwiftSupport {
+  	header "MSManagedObject+DHSwiftSupport.h"
+  	export *
+  }
+}

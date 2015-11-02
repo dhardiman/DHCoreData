@@ -6,9 +6,7 @@
 //
 //
 
-#import "NSManagedObject+DH.h"
-
-@interface NSManagedObject (DHPrivate)
+@interface NSManagedObject (DHSwiftSupport)
 
 + (NSArray *)objectsInContext:(NSManagedObjectContext *)context
         sortedWithDescriptors:(NSArray *)sortDescriptors

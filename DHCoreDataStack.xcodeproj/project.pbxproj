@@ -49,6 +49,7 @@
 		07F0B8F817C17C1F003D8581 /* DHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F0B8F617C17C1F003D8581 /* DHViewController.xib */; };
 		07F0B8FB17C17C37003D8581 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F0B8F917C17C37003D8581 /* InfoPlist.strings */; };
 		07F0B90017C17C42003D8581 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0B8FE17C17C42003D8581 /* main.m */; };
+		451A82E41BE7A8C600CA89F3 /* NSManagedObject+DHSwiftSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 451A82E01BE7A65500CA89F3 /* NSManagedObject+DHSwiftSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4542855D1A91EC8900084DBA /* DHFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E2840C1A8E3680007F5D85 /* DHFoundation.framework */; };
 		4542855E1A91ECF400084DBA /* DHFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E2840C1A8E3680007F5D85 /* DHFoundation.framework */; };
 		4542855F1A91ECF400084DBA /* DHFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45E2840C1A8E3680007F5D85 /* DHFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -130,7 +131,7 @@
 		07F0B8FC17C17C42003D8581 /* DHCoreDataStack-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DHCoreDataStack-Info.plist"; path = "DHCoreDataStack/DHCoreDataStack-Info.plist"; sourceTree = SOURCE_ROOT; };
 		07F0B8FD17C17C42003D8581 /* DHCoreDataStack-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "DHCoreDataStack-Prefix.pch"; path = "DHCoreDataStack/DHCoreDataStack-Prefix.pch"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		07F0B8FE17C17C42003D8581 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = main.m; path = DHCoreDataStack/main.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		451A82E01BE7A65500CA89F3 /* NSManagedObject+DHPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+DHPrivate.h"; sourceTree = "<group>"; };
+		451A82E01BE7A65500CA89F3 /* NSManagedObject+DHSwiftSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+DHSwiftSupport.h"; sourceTree = "<group>"; };
 		454C84371A48591300DC63B5 /* DHCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DHCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454C843A1A48591300DC63B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454C843B1A48591300DC63B5 /* DHCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCoreData.h; sourceTree = "<group>"; };
@@ -179,7 +180,7 @@
 				0731647C179578DF00930FCE /* DHCoreDataStack.h */,
 				0731647D179578DF00930FCE /* DHCoreDataStack.m */,
 				0731647E179578DF00930FCE /* NSManagedObject+DH.h */,
-				451A82E01BE7A65500CA89F3 /* NSManagedObject+DHPrivate.h */,
+				451A82E01BE7A65500CA89F3 /* NSManagedObject+DHSwiftSupport.h */,
 				0731647F179578DF00930FCE /* NSManagedObject+DH.m */,
 				07632137179400A400846D0D /* Supporting Files */,
 			);
@@ -368,6 +369,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451A82E41BE7A8C600CA89F3 /* NSManagedObject+DHSwiftSupport.h in Headers */,
 				454C84591A48597A00DC63B5 /* DHCoreDataStack.h in Headers */,
 				454C843C1A48591300DC63B5 /* DHCoreData.h in Headers */,
 				454C845B1A48598300DC63B5 /* NSManagedObject+DH.h in Headers */,
@@ -441,6 +443,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DH;
+				LastSwiftUpdateCheck = 0700;
 				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "";
@@ -852,6 +855,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -872,10 +876,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.davidhardiman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DHCoreData;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -887,6 +894,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -904,10 +912,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.davidhardiman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DHCoreData;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
