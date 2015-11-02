@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DC02B897EB888C78AF297B6E60A138794ECB7650+++AD1B930",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DC02B897EB888C78AF297B6E60A138794ECB7650+++AD1B930" : 0,
+    "F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E+++3BBB4FB" : 0,
+    "F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E+++F221A8F" : 0,
+    "9B1CB1E79B9BADC737FD887D708ECC0E47B150CC+++83C5409" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7480615B-379D-4A49-B1E5-D21F380849A8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DC02B897EB888C78AF297B6E60A138794ECB7650+++AD1B930" : "DHCoreData",
+    "F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E+++3BBB4FB" : "DHCoreDataDHFoundation",
+    "F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E+++F221A8F" : "DHCoreDataDHFoundation",
+    "9B1CB1E79B9BADC737FD887D708ECC0E47B150CC+++83C5409" : "Dropbox\/Code\/Common%20iOS%20Code\/MIQCoreData\/MIQFoundation"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DHCoreDataStack",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DHCoreDataStack.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mobileiq\/MIQFoundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9B1CB1E79B9BADC737FD887D708ECC0E47B150CC+++83C5409"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dhardiman\/DHCoreData.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DC02B897EB888C78AF297B6E60A138794ECB7650+++AD1B930"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dhardiman\/DHFoundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E+++3BBB4FB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dhardiman\/DHFoundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F22EEF2DFED620A5467D9BB4EC0CE9555C0A737E+++F221A8F"
+    }
+  ]
+}

@@ -130,6 +130,7 @@
 		07F0B8FC17C17C42003D8581 /* DHCoreDataStack-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DHCoreDataStack-Info.plist"; path = "DHCoreDataStack/DHCoreDataStack-Info.plist"; sourceTree = SOURCE_ROOT; };
 		07F0B8FD17C17C42003D8581 /* DHCoreDataStack-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "DHCoreDataStack-Prefix.pch"; path = "DHCoreDataStack/DHCoreDataStack-Prefix.pch"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		07F0B8FE17C17C42003D8581 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = main.m; path = DHCoreDataStack/main.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		451A82E01BE7A65500CA89F3 /* NSManagedObject+DHPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+DHPrivate.h"; sourceTree = "<group>"; };
 		454C84371A48591300DC63B5 /* DHCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DHCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454C843A1A48591300DC63B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454C843B1A48591300DC63B5 /* DHCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCoreData.h; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 				0731647C179578DF00930FCE /* DHCoreDataStack.h */,
 				0731647D179578DF00930FCE /* DHCoreDataStack.m */,
 				0731647E179578DF00930FCE /* NSManagedObject+DH.h */,
+				451A82E01BE7A65500CA89F3 /* NSManagedObject+DHPrivate.h */,
 				0731647F179578DF00930FCE /* NSManagedObject+DH.m */,
 				07632137179400A400846D0D /* Supporting Files */,
 			);
@@ -440,7 +442,7 @@
 			attributes = {
 				CLASSPREFIX = DH;
 				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					450A4B6E1A31A872001D9577 = {
@@ -639,8 +641,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -678,6 +682,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -711,6 +716,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davidhardiman.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = DHCoreDataStack;
 				WRAPPER_EXTENSION = app;
 			};
@@ -734,6 +740,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davidhardiman.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = DHCoreDataStack;
 				WRAPPER_EXTENSION = app;
 			};
@@ -769,6 +776,7 @@
 					"-all_load",
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mobileiq.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = DHCoreDataStackTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -804,6 +812,7 @@
 					"-all_load",
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mobileiq.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = DHCoreDataStackTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -864,6 +873,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.davidhardiman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DHCoreData;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -895,6 +905,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.davidhardiman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DHCoreData;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -949,6 +960,7 @@
 				454285951A91EED800084DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		454C84501A48591300DC63B5 /* Build configuration list for PBXNativeTarget "DHCoreData" */ = {
 			isa = XCConfigurationList;
