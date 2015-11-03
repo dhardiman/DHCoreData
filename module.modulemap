@@ -4,8 +4,8 @@ framework module DHCoreData {
   export *
   module * { export * }
 
-  module SwiftSupport {
-  	header "MSManagedObject+DHSwiftSupport.h"
+  explicit module SwiftSupport {
+  	header "NSManagedObject+DHSwiftSupport.h"
   	export *
   }
 }
